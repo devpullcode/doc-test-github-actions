@@ -8,9 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-18.04
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          sparse-checkout: .
 
-      - run: ls -l
+    steps:
+      - name: "Mostrando variables por defecto"
+        run: echo "Evento: ${{ toJson(github.event) }}"
