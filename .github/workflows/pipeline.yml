@@ -13,7 +13,8 @@ jobs:
       - name: Mostrando variables por defecto
         run: |
           echo "Evento: ${{toJSON(github.event)}}"
-      
+
       - name: Mostrando nombre autor
         run: |
           echo "Evento: ${{toJSON(github.event.head_commit.author.name)}}"
+          echo "Github_Actor: $GITHUB_ACTOR"
