@@ -10,5 +10,6 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-      - name: "Mostrando variables por defecto"
-        run: echo "Evento:${{toJson(github.event)}}"
+      - name: Mostrando variables por defecto
+        run: |
+          echo "Evento: ${{toJSON(github.event)}}"
