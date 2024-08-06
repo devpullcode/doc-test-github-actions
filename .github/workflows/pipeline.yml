@@ -7,6 +7,10 @@ on:
 
 jobs:
   deploy:
+    env:
+      username: ${{secrets.USER_NAME}}
+      password: ${{secrets.PASSWORD}}
+
     runs-on: ubuntu-latest
 
     steps:
@@ -18,3 +22,7 @@ jobs:
         run: |
           echo "Evento: ${{toJSON(github.event.head_commit.author.name)}}"
           echo "Github_Actor: $GITHUB_ACTOR"
+
+      - name: Mostrando valores si usuario existe
+        if: ${{ env.username != '' && env.password != '' }}
+        run: echo "Si existe usuario y contraseña"
