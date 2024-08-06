@@ -26,3 +26,7 @@ jobs:
       - name: Mostrando valores si usuario existe
         if: ${{ env.username != '' && env.password != '' }}
         run: echo "Si existe usuario y contraseña"
+
+      - name: Versión del proyecto
+        run: |
+          echo "version: ${{ vars.PROJECT_VERSION }}"
